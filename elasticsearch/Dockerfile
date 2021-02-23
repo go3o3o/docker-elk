@@ -5,7 +5,7 @@ FROM docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
 
 # Add your elasticsearch plugins setup here
 
-COPY config/medi_dictionary.txt config/medi_dictionary.txt
+COPY config config
 
 # 한글 형태소 분석
 RUN elasticsearch-plugin install analysis-nori
