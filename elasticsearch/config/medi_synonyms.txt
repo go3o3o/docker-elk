@@ -15,7 +15,7 @@ ok메디칼,ok메디컬,okmedical,OK메디컬,OKMEDICAL
 테라건,테라거,theragun,THERAGUN
 베개,배개,베게
 오케이차트,ok차트,okchart,OK차트,OKCHART
-허먼밀러,hermanmiller,HERMANMILLER
+허먼밀러,hermanmiller,HERMANMILLER,herman miller,HERMAN MILLER
 마사지,massage,MASSAGE
 볼,ball,BALL
 메디코어,medicore,MEDICORE
