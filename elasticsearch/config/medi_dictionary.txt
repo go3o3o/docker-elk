@@ -43006,3 +43006,5 @@ MEDICORE
 MediCore
 Medicore
 천양
+발받침
+무침
