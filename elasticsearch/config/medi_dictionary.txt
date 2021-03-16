@@ -19026,7 +19026,6 @@
 신원빈
 신원장
 신원진술서
-신원침
 신월랑
 신유진
 신유체질침
@@ -42106,8 +42105,6 @@ smc
 Smc
 SMC
 smc쌈
-smc침
-SMC침
 smilegut
 Sniper
 sniper
