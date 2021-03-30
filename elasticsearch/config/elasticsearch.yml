@@ -3,11 +3,19 @@
 ## https://github.com/elastic/elasticsearch/blob/master/distribution/docker/src/docker/config/elasticsearch.yml
 #
 cluster.name: "docker-cluster"
+# node.name: "master-node"
+
 network.host: 0.0.0.0
+
+node.master: true
+node.data: true
+node.ingest: true
+node.max_local_storage_nodes: 2
+# index.number_of_shards: 2
 
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html
 #
 #xpack.license.self_generated.type: trial
-#xpack.security.enabled: true
-#xpack.monitoring.collection.enabled: true
+# xpack.security.enabled: true
+# xpack.monitoring.collection.enabled: true

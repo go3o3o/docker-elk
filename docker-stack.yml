@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  elasticsearch:
+  elasticsearch01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
     ports:
       - "9200:9200"
@@ -10,13 +10,30 @@ services:
       - source: elastic_config
         target: /usr/share/elasticsearch/config/elasticsearch.yml
     environment:
-      ES_JAVA_OPTS: "-Xmx2g -Xms2g"
-      # ELASTIC_PASSWORD: changeme
-      # Use single node discovery in order to disable production mode and avoid bootstrap checks.
-      # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
-      discovery.type: single-node
-      # Force publishing on the 'elk' overlay.
-      #network.publish_host: _eth0_
+      # ES_JAVA_OPTS: "-Xmx2g -Xms2g"
+      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      - node.name=elasticsearch01
+      - discovery.seed_hosts=elasticsearch02
+      - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
+    networks:
+      - elk
+    deploy:
+      mode: replicated
+      replicas: 1
+  elasticsearch02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    ports:
+      - "9201:9200"
+      - "9301:9300"
+    configs:
+      - source: elastic_config
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+      # ES_JAVA_OPTS: "-Xmx2g -Xms2g"
+      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      - node.name=elasticsearch02
+      - discovery.seed_hosts=elasticsearch01
+      - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
     networks:
       - elk
     deploy:
