@@ -20,3 +20,4 @@ ok메디칼,ok메디컬,okmedical,OK메디컬,OKMEDICAL
 볼,ball,BALL
 메디코어,medicore,MEDICORE
 천양사,천양
+주사,주사기,니들,약침,주사침
