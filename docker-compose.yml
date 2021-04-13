@@ -18,7 +18,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     environment:
-      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
       - node.name=elasticsearch01
       - discovery.seed_hosts=elasticsearch02
       - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
@@ -45,7 +45,7 @@ services:
       - "9201:9200"
       - "9301:9300"
     environment:
-      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
       - node.name=elasticsearch02
       - discovery.seed_hosts=elasticsearch01
       - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
@@ -77,7 +77,7 @@ services:
       - "5000:5000"
       - "9600:9600"
     environment:
-      LS_JAVA_OPTS: "-Xmx2g -Xms2g"
+      LS_JAVA_OPTS: "-Xmx1g -Xms1g"
     networks:
       - elk
     depends_on:

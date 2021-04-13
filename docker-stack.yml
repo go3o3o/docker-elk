@@ -10,8 +10,8 @@ services:
       - source: elastic_config
         target: /usr/share/elasticsearch/config/elasticsearch.yml
     environment:
-      # ES_JAVA_OPTS: "-Xmx2g -Xms2g"
-      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      # ES_JAVA_OPTS: "-Xmx1g -Xms1g"
+      - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
       - node.name=elasticsearch01
       - discovery.seed_hosts=elasticsearch02
       - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
@@ -29,8 +29,8 @@ services:
       - source: elastic_config
         target: /usr/share/elasticsearch/config/elasticsearch.yml
     environment:
-      # ES_JAVA_OPTS: "-Xmx2g -Xms2g"
-      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      # ES_JAVA_OPTS: "-Xmx1g -Xms1g"
+      - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
       - node.name=elasticsearch02
       - discovery.seed_hosts=elasticsearch01
       - cluster.initial_master_nodes=elasticsearch01,elasticsearch02
@@ -52,7 +52,7 @@ services:
       - source: logstash_pipeline
         target: /usr/share/logstash/pipeline/logstash.conf
     environment:
-      LS_JAVA_OPTS: "-Xmx2g -Xms2g"
+      LS_JAVA_OPTS: "-Xmx1g -Xms1g"
     networks:
       - elk
     deploy:
